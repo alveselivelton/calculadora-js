@@ -1,23 +1,34 @@
-function insert(num) {
-  const numero = document.getElementById("resultado").innerHTML;
-  document.getElementById("resultado").innerHTML = numero + num;
-}
+const buttons = document.querySelectorAll(".btn");
+const clearBtn = document.querySelector("#clear-btn");
+const deleteBtn = document.querySelector("#delete-btn");
+const equalBtn = document.querySelector("#equal-btn");
 
-function clean() {
-  document.getElementById("resultado").innerHTML = "";
-}
+const display = document.querySelector("#display");
 
-function back() {
-  const resultado = document.getElementById("resultado").innerHTML;
-  document.getElementById("resultado").innerHTML = resultado.substring(
-    0,
-    resultado.length - 1
-  );
-}
+const insert = (num) => {
+  const displayValue = display.innerHTML;
+  display.innerHTML = displayValue + num;
+};
 
-function calculate() {
-  const resultado = document.getElementById("resultado").innerHTML;
-  if (resultado) {
-    document.getElementById("resultado").innerHTML = eval(resultado);
+buttons.forEach((button) =>
+  button.addEventListener("click", () => {
+    const buttonValue = button.innerHTML;
+    insert(buttonValue);
+  })
+);
+
+clearBtn.addEventListener("click", () => {
+  display.innerHTML = "";
+});
+
+deleteBtn.addEventListener("click", () => {
+  const displayValue = display.innerHTML;
+  display.innerHTML = displayValue.substring(0, displayValue.length - 1);
+});
+
+equalBtn.addEventListener("click", () => {
+  const displayValue = display.innerHTML;
+  if (displayValue) {
+    display.innerHTML = eval(displayValue);
   }
-}
+});

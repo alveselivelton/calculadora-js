@@ -33,7 +33,7 @@
   border-radius: 2px;
 }
 
-#resultado {
+#display {
   width: 100%;
   background-color: #dbc683;
   height: 40px;
@@ -54,8 +54,9 @@
   height: 320px;
 }
 
-.btn {
-  background-color: #1f1f1f;
+.btn,
+.delete-btn,
+.special-btn {
   font-size: 25px;
   color: white;
   cursor: pointer;
@@ -63,18 +64,23 @@
   border-radius: 5px;
 }
 
+.btn,
+.delete-btn {
+  background-color: #1f1f1f;
+}
+
 .btn:hover {
   background-color: black;
 }
 
-.btn-special {
+.special-btn {
   background-color: #d42c2c;
+}
+
+.special-btn:hover {
+  background-color: #ff0000;
 }
 
 #equal-btn {
   grid-row: span 2;
-}
-
-.btn-special:hover {
-  background-color: #ff0000;
 }
