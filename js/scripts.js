@@ -12,7 +12,12 @@ const insert = (num) => {
 
 buttons.forEach((button) =>
   button.addEventListener("click", () => {
-    const buttonValue = button.innerHTML;
+    let buttonValue = button.innerHTML;
+
+    if (buttonValue === "x") {
+      buttonValue = "*";
+    }
+
     insert(buttonValue);
   })
 );
